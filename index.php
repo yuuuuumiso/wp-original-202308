@@ -35,7 +35,7 @@
       <p>HP最下部の著作表示『Web Design:Template-Party』は無断で削除しないで下さい。
       わざと見えなく加工する事も禁止です。</p>
       <h3 class="secTtl02">当テンプレートの詳しい使い方は</h3>
-      <p><a href="<?php echo home_url(); ?>">こちらをご覧下さい！</a></p>
+      <p><a href="<?php echo home_url(); ?>">こちらをご覧下さい！！</a></p>
     </section>
 
 
