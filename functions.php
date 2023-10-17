@@ -12,45 +12,39 @@ function webst8_setup() {
 add_action( 'after_setup_theme', 'webst8_setup' );
 //after_setup_themeアクションフック※に登録します。
 
-/*メニュー機能を管理画面から編集できるように*/
+/*メニュー機能を管理画面から編集できるように
+左の単語とナビ部分の単語は一致していないと駄目
+右の単語は管理画面上の表示なのでなんでもOK
+※管理画面からメニューを登録して、wp_nav関数で呼び出す方法もある：教科書P116
+*/
 function register_my_menus() {
   register_nav_menus(
    array(
-   'gloval-navigation' => 'gloval navigation',
-   'footer-navigation' => 'footer navigation',
+   'gloval-navigation' => 'ヘッダーメニュー',
+   'footer-navigation' => 'フッターメニュー（左）',
+   'footer-navi' => 'フッターメニュー（中）',
    )
   );
 }
 add_action( 'after_setup_theme', 'register_my_menus' );
 
-/*ウィジェット、サイドバーの登録 */
+/*ウィジェット登録
+下記がないと管理画面に「ウィジェット」が表示されない
+https://www.youtube.com/watch?v=fyHZH526wpo
+*/
 function my_widgets_init() {
-	register_sidebar( array(
-		'name' => 'サイドバー',
-		'id' => 'sidebar_widget01',
-		'before_widget' => '<div class="container bg-white mb-5 py-5">',
-    'after_widget' => '</div>',
-  ) );
 
   register_sidebar( array(
-		'name' => 'フッターAbout',
+		'name' => 'フッター ウィジェット',
 		'id' => 'footer_widget01',
-		'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title'  => '<h4 class="d-inline-block py-3 border-bottom border-info">',
-	  'after_title'   => '</h4>'
+    'description' => 'フッターにコンテンツを表示します。',
+    'before_widget'=>'
+    <div id="%1$s" class="%2$s sidebar-wrapper">',
+    'after_widget'=>'</div>',
+    'before_title' => '<h5 class="sidebar-title">',
+    'after_title' => '</h5>'
   ) );
 
-  register_sidebar( array(
-    'name'          => 'Main Sidebar',
-    'id'            => 'sidebar-main',
-    'description'   => 'Add widgets you want to display in sidebar.',
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h5 class="widget-title heading-small">',
-    'after_title'   => '</h5>',
-  ) );
-  
 }
 add_action( 'widgets_init', 'my_widgets_init' );
 

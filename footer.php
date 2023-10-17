@@ -9,35 +9,30 @@
 
   <div id="footermenu">
     <ul>
-      <li class="title">メニュー</li>
-      <li><a href="index.html">ホーム</a></li>
-      <li><a href="company.html">会社概要</a></li>
-      <li><a href="list.html">仕事検索</a></li>
-      <li><a href="request.html">企業のご担当者様</a></li>
-      <li><a href="faq.html">よく頂く質問</a></li>
-      <li><a href="contact.html">お問い合わせ</a></li>
+      <li class="title">メニュー見出し Left</li>
+        <?php
+        $footNavLeft = array(
+          'container'       => false,
+          'theme_location'  => 'footer-navigation',
+        );
+        wp_nav_menu( $footNavLeft );
+        ?>
     </ul>
     <ul>
-      <li class="title">メニュー見出し</li>
-      <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
+      <li class="title">メニュー見出し Center</li>
+        <?php
+        $footNavCenter = array(
+          'menu_id'         => 'footer-navi',
+          'menu_class'      => 'footer-navi',
+          'container'       => false,
+          'theme_location'  => 'footer-navi',
+        );
+        wp_nav_menu( $footNavCenter );
+        ?>
     </ul>
-    <ul>
-      <li class="title">メニュー見出し</li>
-      <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-    </ul>
-    <ul>
-      <li class="title">メニュー見出し</li>
-      <li><a href="#">サンプルメニューサンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-      <li><a href="#">サンプルメニュー</a></li>
-    </ul>
+    <aside id="foot-widget">
+        <?php dynamic_sidebar('footer_widget01'); ?>
+    </aside>
   </div>
   <footer>
     <small>Copyright© <a href="index.html">サンプル派遣会社</a> All Rights Reserved.</small>
