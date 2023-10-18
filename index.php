@@ -2,7 +2,7 @@
   <div class="mv">
     <div class="mv__txt">
       <div class="mv__box">
-        <h2 class="mv__ttl01">マッチングで理想の仕事を</h2>
+        <h2 class="mv__ttl01">マッチングで理想の仕事をooo</h2>
         <a href="<?php echo home_url(); ?>" class="btn btn01">派遣登録<i class="fas fa-arrow-circle-right"></i></a>
       </div>
     </div>
